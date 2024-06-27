@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+  	font-optical-sizing: auto;
+  	font-weight: 400;
+  	font-style: normal;
+    background-image: url(main_image.jpg);
+	background-size:cover;
+	background-position: center; 
+}
+
+/* Header and Naavigation styling starts from here */
+
+
+
+header {
+
+    font-size: 16px;
+    color: white;
+    padding: 10px 0;
+	background-image: url(image3.jpg);
+	background-size: cover;
+	background-position:center; 
+}
+
+/* Top navBar */
+
+nav {
+    display: flex;
+	overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 8vw; 
+    height: 8vh; 
+    margin-right: 10px; 
+    border-radius: 20%; 
+}
+
+/* nav .logo {
+    font-size: 24px;
+    padding-left: 20px;
+} */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+	color: burlywood;
+    /* background-color: #65451F; */
+	border-radius: 5px;
+	border: 2px solid transparent;
+}
+
+/* This is the bottom nav which is inside the border */
+
+.navbarBottom {
+	padding: 5px;
+	border-top: #f6b73c;
+	/* */
+	border-width: 2px;
+	border-style: solid;
+	position: relative;
+}
+
+.navbarBottom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f6b73c;
+    animation: changeColor 2s linear infinite ;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: rgba(255, 158, 47, 0.596);
+    }
+    100% {
+        border-image: linear-gradient(#f6b73c, #4d9f0c, #404040) 30; 
+    }
+}
+
+
+.navbarBottom ul {
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+	list-style: none;
+}
+
+.navbarBottom ul a {
+	padding: 5px;
+	/* border: 1px solid #17B169; */
+	text-decoration: none;
+	color: white;
+	transition: 0.5s step-start;
+}
+
+.navbarBottom ul a:hover {
+	color: rgb(222, 195, 135);
+	padding: 8px;
+	border-radius: 10px;
+	/* background-color:#65451F; */
+	border: 0px solid transparent;
+	
+}
+
+main {
+    display: flex;
+}
+
+/* Sidebar dtyling starts from here */
+
+.sidebar {
+    width: 13.5vw;
+	height: 100vh;
+    /* background-color: #322C2B; */
+    color: white;
+	border: 6px solid #803D3B;
+	background-image: url(image4.jpg);
+	background-size:cover;
+	background-position: center; 
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.sidebar ul li {
+    padding: 10px 0;
+}
+
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+	transition: 0.5s ease-in-out;
+}
+
+
+.sidebar ul li a:hover {
+    background-color: #AF8260;
+}
+
+/* Below is main area  */
+
+.container {
+	width: 80vw;
+	height: 60vh;
+	/* padding: 2px 2px 2px 2px; */
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+}
+
+.card {
+
+	display: inline-block; 
+	margin-top: 30px;
+    margin-right: 70px;
+    width: 300px;
+	height: 55vh;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-heading {
+    margin-bottom: 10px;
+}
+
+.card-heading h2 {
+	color:burlywood;
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-text {
+	/* background: white; */
+    font-size: 14px;
+    color: white;
+	font-family: "Noto Sans", sans-serif;
+	font-weight: 500;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+	cursor: pointer;
+}
+
+/* footer below */
+
+footer {
+    background-color: #AF8260;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* for small tablets */
+@media (max-width: 799px) {
+	.sidebar {
+		width: 22vw;
+	}
+	.container {
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+	}
+	.card {
+		width: 50vw;
+	}
+	
+  }
+
+
+
+/*  for big tablets */
+
+  @media (min-width: 900px) {
+	.container {
+		height: 40vh;
+		padding: 40px 5px 2px 15px;
+	 }
+  } 
+
+
+  /* for small mobile devices  */
+
+  @media (max-width: 399px) {
+	.sidebar {
+		width: 32vw;
+		height: 250vh;
+		font-size: 14px;
+	}
+	.card {
+		display: inline-block;
+		margin-top: 30px;
+		margin-right: 0px;
+	}
+	.logo img {
+		width: 12vw;
+		height: 8vh;
+		margin-right: 10px;
+		border-radius: 20%;
+	}
+  }
